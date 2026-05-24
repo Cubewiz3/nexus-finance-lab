@@ -15,6 +15,9 @@ import {
   Zap,
 } from "lucide-react";
 
+const CHECKOUT_URL =
+  "https://payhip.com/buy?s=1&cart_links%5B%5D=guU0w&qty%5BguU0w%5D=1";
+
 interface ProductTemplate {
   id: string;
   tag: string;
@@ -48,8 +51,7 @@ const PRODUCT_DATA: ProductTemplate[] = [
     border: "hover:border-emerald-500/50",
     shadow: "shadow-emerald-500/10",
     bgGradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
-    checkoutUrl:
-      "https://payhip.com/buy?s=1&cart_links%5B%5D=guU0w&qty%5BguU0w%5D=1",
+    checkoutUrl: CHECKOUT_URL,
     specs: "Compatible con Excel 2021+ y Google Sheets. Configurado en Soles (S/) y USD.",
   },
 ];
@@ -218,16 +220,16 @@ export default function CompletePremiumLanding() {
         <div className="absolute right-[-16%] top-[28%] h-[34rem] w-[34rem] rounded-full bg-blue-500/10 blur-[150px]" />
       </div>
 
-      <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between border-b border-white/5 px-6 py-6 backdrop-blur-sm md:px-12">
+      <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between gap-3 border-b border-white/5 px-4 py-4 backdrop-blur-sm sm:px-6 md:px-12 md:py-6">
         <div className="flex items-center gap-3 text-white">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 shadow-lg shadow-emerald-500/20">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 shadow-lg shadow-emerald-500/20 md:h-10 md:w-10">
             <Activity className="h-5 w-5 text-white" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="text-lg font-black tracking-tight md:text-xl">
+            <span className="text-base font-black tracking-tight md:text-xl">
               NEXUS
             </span>
-            <span className="mt-0.5 text-[10px] font-extrabold tracking-[0.16em] text-emerald-400 md:text-xs">
+            <span className="mt-0.5 text-[9px] font-extrabold tracking-[0.14em] text-emerald-400 md:text-xs">
               FINANCE <span className="text-emerald-400">LAB</span>
             </span>
           </div>
@@ -241,24 +243,24 @@ export default function CompletePremiumLanding() {
           </a>
         </div>
         <a
-          href="#producto"
-          className="buy-pulse promo-shine rounded-full border border-emerald-400/30 bg-emerald-400 px-5 py-2 text-xs font-black text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-300"
+          href={CHECKOUT_URL}
+          className="buy-pulse promo-shine shrink-0 rounded-full border border-emerald-400/30 bg-emerald-400 px-3 py-2 text-[11px] font-black text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-300 sm:px-5 sm:text-xs"
         >
-          Lanzamiento S/ 34
+          Comprar S/ 34
         </a>
       </nav>
 
-      <div className="promo-pulse relative z-40 border-b border-emerald-400/10 bg-emerald-400/10 px-6 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-emerald-300 md:text-sm">
+      <div className="promo-pulse relative z-40 border-b border-emerald-400/10 bg-emerald-400/10 px-4 py-3 text-center text-[11px] font-bold uppercase leading-5 tracking-[0.12em] text-emerald-300 sm:px-6 md:text-sm md:tracking-[0.18em]">
         Oferta de lanzamiento: S/ 34 hoy · precio regular S/ 109 · guía de uso de regalo · 69% OFF
       </div>
 
-      <header className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 pb-20 pt-20 md:px-12 lg:grid-cols-12 lg:pt-28">
+      <header className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-16 pt-14 sm:px-6 md:px-12 md:pb-20 md:pt-20 lg:grid-cols-12 lg:gap-12 lg:pt-28">
         <div className="lg:col-span-7">
-          <span className="promo-pulse mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-amber-200 shadow-lg shadow-amber-500/10">
+          <span className="promo-pulse mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-2 text-[10px] font-black uppercase leading-5 tracking-[0.12em] text-amber-200 shadow-lg shadow-amber-500/10 sm:px-4 sm:text-xs sm:tracking-[0.16em]">
             <Zap className="h-3.5 w-3.5 text-emerald-300" />
             Precio lanzamiento S/ 34 · guía de uso de regalo · 69% OFF
           </span>
-          <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white md:text-7xl">
+          <h1 className="max-w-4xl text-[2.55rem] font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Proyecta tu jubilación en Perú con una plantilla financiera lista
             para usar.
           </h1>
@@ -269,7 +271,7 @@ export default function CompletePremiumLanding() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#producto"
+              href={CHECKOUT_URL}
               className="buy-pulse promo-shine inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-400 px-6 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-emerald-300"
             >
               <span className="flex flex-col items-start leading-none">
@@ -295,7 +297,7 @@ export default function CompletePremiumLanding() {
             Payhip
           </p>
           <PaymentTrustLogos className="mt-4" />
-          <div className="mt-8 grid max-w-2xl grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
             {trustItems.map((item) => (
               <div
                 key={item}
@@ -359,7 +361,7 @@ export default function CompletePremiumLanding() {
 
       <section
         id="simulador"
-        className="relative z-10 mx-auto mb-28 grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-12"
+        className="relative z-10 mx-auto mb-20 grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 md:mb-28 md:px-12 lg:grid-cols-12 lg:gap-12"
       >
         <div className="space-y-6 lg:col-span-5">
           <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
@@ -376,15 +378,15 @@ export default function CompletePremiumLanding() {
             stress tests.
           </p>
           <a
-            href="#producto"
-            className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-emerald-300"
+            href={CHECKOUT_URL}
+            className="buy-pulse promo-shine inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-400 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-emerald-300"
           >
-            Quiero la plantilla completa
+            Comprar por S/ 34
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
-        <div className="rounded-[32px] border border-white/10 bg-slate-950/60 p-6 shadow-2xl backdrop-blur-md md:p-8 lg:col-span-7">
+        <div className="rounded-[28px] border border-white/10 bg-slate-950/60 p-4 shadow-2xl backdrop-blur-md sm:p-6 md:rounded-[32px] md:p-8 lg:col-span-7">
           <div className="mb-6 flex items-center justify-between border-b border-white/5 pb-4">
             <div className="flex min-w-0 items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
@@ -434,7 +436,7 @@ export default function CompletePremiumLanding() {
             />
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-4 border-t border-white/5 pt-6 md:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-4 border-t border-white/5 pt-6 sm:grid-cols-2 lg:grid-cols-4">
             <MetricCard
               label="Capital estimado"
               value={`S/ ${projection.capitalFinalNominal.toLocaleString()}`}
@@ -460,15 +462,15 @@ export default function CompletePremiumLanding() {
 
       <section
         id="producto"
-        className="relative z-10 mx-auto mb-28 max-w-7xl px-6 md:px-12"
+        className="relative z-10 mx-auto mb-20 max-w-7xl px-4 sm:px-6 md:mb-28 md:px-12"
       >
-        <div className="grid grid-cols-1 overflow-hidden rounded-[32px] border border-emerald-500/20 bg-emerald-500/[0.04] shadow-2xl shadow-emerald-500/10 lg:grid-cols-12">
-          <div className="p-8 md:p-10 lg:col-span-7">
+        <div className="grid grid-cols-1 overflow-hidden rounded-[28px] border border-emerald-500/20 bg-emerald-500/[0.04] shadow-2xl shadow-emerald-500/10 md:rounded-[32px] lg:grid-cols-12">
+          <div className="p-5 sm:p-8 md:p-10 lg:col-span-7">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-300">
               <Sparkles className="h-4 w-4" />
               Producto principal
             </span>
-            <h2 className="mt-5 max-w-3xl text-3xl font-black tracking-tight text-white md:text-5xl">
+            <h2 className="mt-5 max-w-3xl text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl">
               Planificador de Jubilación Perú 2026
             </h2>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300">
@@ -488,7 +490,7 @@ export default function CompletePremiumLanding() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col justify-between border-t border-white/5 bg-slate-950/70 p-8 md:p-10 lg:col-span-5 lg:border-l lg:border-t-0">
+          <div className="flex flex-col justify-between border-t border-white/5 bg-slate-950/70 p-5 sm:p-8 md:p-10 lg:col-span-5 lg:border-l lg:border-t-0">
             <div>
               <div className="promo-pulse mb-5 inline-flex rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs font-black uppercase tracking-[0.16em] text-amber-200">
                 Oferta de lanzamiento
@@ -497,7 +499,7 @@ export default function CompletePremiumLanding() {
                 Acceso inmediato
               </p>
               <div className="mt-3 flex flex-wrap items-end gap-3">
-                <span className="text-6xl font-black text-white">S/ 34</span>
+                <span className="text-5xl font-black text-white sm:text-6xl">S/ 34</span>
                 <div className="pb-1 text-xs uppercase tracking-widest text-slate-500">
                   <span className="block text-sm font-bold text-slate-400 line-through">Precio regular S/ 109</span>
                   <span className="mt-2 inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/15 px-3 py-1.5 text-xs font-black text-emerald-300">
@@ -553,7 +555,7 @@ export default function CompletePremiumLanding() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto mb-28 max-w-7xl px-6 md:px-12">
+      <section className="relative z-10 mx-auto mb-20 max-w-7xl px-4 sm:px-6 md:mb-28 md:px-12">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
@@ -572,13 +574,13 @@ export default function CompletePremiumLanding() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
           {templateMockups.map((mockup) => (
             <article
               key={mockup.name}
-              className="overflow-hidden rounded-[28px] border border-white/10 bg-transparent shadow-2xl shadow-black/20 backdrop-blur-xl"
+              className="overflow-hidden rounded-[24px] border border-white/10 bg-transparent shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-[28px]"
             >
-              <div className="border-b border-white/5 bg-slate-950/70 p-4">
+              <div className="border-b border-white/5 bg-slate-950/70 p-4 sm:p-5">
                 <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-300">
                   {mockup.name}
                 </span>
@@ -602,7 +604,7 @@ export default function CompletePremiumLanding() {
       </section>
 
 
-      <section className="relative z-10 mx-auto mb-28 max-w-7xl px-6 md:px-12">
+      <section className="relative z-10 mx-auto mb-20 max-w-7xl px-4 sm:px-6 md:mb-28 md:px-12">
         <div className="mb-10 max-w-3xl">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
             Dentro del Excel
@@ -638,7 +640,7 @@ export default function CompletePremiumLanding() {
       </section>
 
       <TestimonialsRibbon />
-      <footer className="relative z-10 border-t border-white/5 px-6 py-8 text-center text-xs text-slate-500 md:px-12">
+      <footer className="relative z-10 border-t border-white/5 px-4 py-8 text-center text-xs text-slate-500 sm:px-6 md:px-12">
         <p>
           Producto educativo. No constituye asesoría financiera, legal ni
           tributaria.
@@ -765,19 +767,19 @@ function MetricCard({
 
 function PaymentTrustLogos({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex flex-wrap items-center gap-2 ${className}`}>
-      <span className="inline-flex h-12 w-[158px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white px-2 shadow-lg shadow-black/10">
+      <div className={`flex flex-wrap items-center gap-2 ${className}`}>
+      <span className="inline-flex h-11 w-[142px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white px-2 shadow-lg shadow-black/10 sm:h-12 sm:w-[158px]">
         <img
           src="/logos/mercado-pago.svg"
           alt="Mercado Pago"
-          className="h-9 w-auto scale-[1.35]"
+          className="h-8 w-auto scale-[1.35] sm:h-9"
         />
       </span>
-      <span className="inline-flex h-12 w-[132px] items-center justify-center rounded-full border border-white/10 bg-white px-4 shadow-lg shadow-black/10">
+      <span className="inline-flex h-11 w-[124px] items-center justify-center rounded-full border border-white/10 bg-white px-4 shadow-lg shadow-black/10 sm:h-12 sm:w-[132px]">
         <img
           src="/logos/payhip.png"
           alt="Payhip"
-          className="h-7 w-auto"
+          className="h-6 w-auto sm:h-7"
         />
       </span>
     </div>
@@ -861,13 +863,6 @@ function TestimonialsRibbon() {
     </section>
   );
 }
-
-
-
-
-
-
-
 
 
 
