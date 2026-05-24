@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Nexus Finance Lab | Planificador de Jubilación Perú 2026",
   description:
     "Plantilla Excel editable para proyectar tu jubilación en Perú con inflación, tipo de cambio, Monte Carlo, SWR, stress tests y guía incluida.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Nexus Finance Lab | Planificador de Jubilación Perú 2026",
     description:
